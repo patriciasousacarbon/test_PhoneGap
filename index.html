@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+    <title>PhoneGap Device Ready Example</title>
+    <script type=”text/javascript” charset=”utf-8” src=”phonegap.js”></script>
+    <script type=”text/javascript” charset=”utf-8”>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() { // call the phonegap api
+            // Register the event listener 
+            document.addEventListener(“backbutton”, onBackButton, false);
+            document.addEventListener(“menubutton”, onMenuButton, false);
+            document.addEventListener(“online”, isOnline, false);
+            document.addEventListener(“offline”, isOffline, false);
+
+        }
+        // Handle the back button //
+        function onBackButton() {
+            
+        }
+        // Handle the menu button //
+        function onMenuButton() { 
+        }
+        // Handle the online event //
+        function isOnline() {
+        alert("the device is connected to the internet.");
+        }
+        
+        function isOffline(){ 
+        //handle the offline event
+            alert("the device is disconnected, please connect to the internet.");
+        }
+        
+    </script> 
+    </head>
+    <body>
+    </body>
+</html>
