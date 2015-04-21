@@ -27,6 +27,14 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('offline', this.onOfflineDevice, false);
+        document.addEventListener('online',this.onOnlineDevice, false);
+    },
+    onOfflineDevice: function () {
+        alert("Offline");
+    },
+    onOnlineDevice: function () {
+        alert("Online");
     },
     // deviceready Event Handler
     //
@@ -43,6 +51,8 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+        
+        alert("ready to rock!");
 
         console.log('Received Event: ' + id);
     }
